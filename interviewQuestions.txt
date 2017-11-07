@@ -2,74 +2,56 @@ React interview questions
 
 1. When should you use a Class Component over a Functional Component?
 
-If your component has state or lifecycle methods, use a Class component, Otherwise, use a functional component
+
 
 2. In which React lifecycle method should you make AJAX calls and why?
 
-You can't guarantee the AJAX request won't resolve before the component mounts. If it did, that would mean that you'd be trying to setState on an umnounted component, which not only won't work, but React will yell at you for doing it. Doing an AJAX call in componentDidMount will guarantee that there's a component to update
+
 
 3. What is the second argument that can optionally be passed to setState and what is its purpose?
 
-A callback function which will be invoked when setState has finished and the component is re-rendered. Something that is not spoken of a lot is that setState is asynchronous which is why it takes in a second callback function.
+
 
 4. What is the virtual DOM and why is it so fast?
 
-It is Reacts local and simplified copy of the HTML DOM. It allows React to perform computations within the abstracted world and skip real dom operations which are slow and browser specific. React performs computations on reactElements and once the computations are complete it renders them into regular dom nodes. It is a lightweight JavaScript object with node trees similar to the real DOM.
-It works in 3 steps
-Whenever any underlying data changes, the entire UI is re-rendered in virtual DOM representation.
-Then the difference between the previous DOM representation and the new one is calculated
-Once the calculations are done, the real DOM will be updated with only the things that have actually changed.
 
 5. What are props and how do they fit into Reacts idea of Unidirectional data flow?
 
-They are read only components which must be kept immutable. They are always passed down from parent to child components, never the other way around.
 
 Redux interview questions
 
 1. What does 'Single source of truth' mean in the Redux context?
 
-The state of your whole application is stored in an object tree within a single store. This makes it easy to create universal app.
 
 2. What are actions in Redux?
 
-Actions are events. Actions send data from the application to the store. the store gets information only from actions. Actions will return an object that has a type property explaining what type of action the store is receiving and a payload property that passes relevant data to the store. An action is just a function that returns an action object.
 
 3. What is the role of reducers in Redux?
 
-Reducers are pure function that take the current state of the application and an action and then return a new state. Redux will create a new object, the values that didn't change will refer to the old object and only new values will be created.
 
 4. What is a store in Redux?
 
-Store is the object that holds the application state and provides a few helper methods to access the state, dispatch actions and register listeners. The entire state is represented by a single store. Any action return a new state via reducers.
 
 Node Interview questions
 
 1. What is the package.json file?
 
-It is a plain JSON text file which contains all metadata information about a node.js project. This file should be present in the root of every node.js package. It tells node how to interpret certain commands passed to it.
 
 2. What is node.js?
 
-Node.js is a server side scripting that runs on the v8 environment. It is also single threaded.
 
 General JavaScript questions
 
 1. What is the call stack in JavaScript?
 
-JavaScript is single threaded. It can only do one thing at a time. It's a data structure that records where in the program we are. As JavaScript runs through and evaluates your code, it will push function calls e.t.c onto the call stack. When it hits a return it will push that function off the call stack and continue evaluating adding and pushing things off the call stack.
 
 2. Follow up..What does blowing the call stack mean?
 
-If I have a function called foo that calls function foo and I invoke it I create an infinite loop. It will never return and thus never take a function call of the callstack. It will continue to call itself recursively until we "blow the call stack"
 
 3. What is a closure in JavaScript?
 
-A closure is a function defined inside another function and has access to variables that are declared and defined in the parent functions scope.
 
 4. What does hoisting refer to in JavaScript?
 
-In JavaScript, variables and function are hoisted. JavaScript will look ahead in the code to find all variable declarations and then hoist them to the top of the function in which they are declared.
 
 5. What is prototypical inheritance refer to in JavaScript?
-
-Instances of an object will inherit directly from other objects. This means that if I try to call a method on an object where I did not define that method, it will walk up its prototype looking for that method until I eventually get up to the top level Object object. 
