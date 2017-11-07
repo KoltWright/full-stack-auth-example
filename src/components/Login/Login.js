@@ -6,10 +6,10 @@ import './Login.css';
 export default class Login extends Component {
     render() {
         return (
-            <div className='App'>  
+            <div className='App'>
                 <img src={logo} alt=""/>
-                <a href={ process.env.REACT_APP_LOGIN }><button>Login</button></a>
-            </div> 
+                <a href="http://localhost:3005/auth"><button>Login</button></a>
+            </div>
         )
     }
 }
