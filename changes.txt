@@ -2,4 +2,27 @@ FILE: Private.js
 
 1. Import update balance
 2. Added constructor
-3. 
+3. Added deposit and withdraw functions
+4. changed available balance to this.props.user.balance
+5. added two buttons that call the deposit and withdraw functions
+6. passed update balance to connect
+
+FILE: user.js
+
+1. Added const and function (action creator)
+2. Added case in reducer
+
+SQL FILES:
+
+1. added balances_create_table
+2. added check_balance
+3. added create_initial_balance
+4. added deposit_100
+5. added find_balance
+6. added withdraw_100
+
+FILE: Index.js
+
+1. Added database calls to either get the balance for the user or to create one if none exists
+2. Added finding balance in the deserializeUser function
+3. Added post endpoint to update balances
