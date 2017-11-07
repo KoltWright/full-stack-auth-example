@@ -1,0 +1,5 @@
+FILE: Private.js
+
+1. Import update balance
+2. Added constructor
+3. 

@@ -6,10 +6,6 @@ import { getUserInfo, updateBalance } from './../../ducks/user';
 import { Link } from 'react-router-dom';
 
 class Private extends Component {
-  //Added constructor
-  constructor() {
-    super()
-  }
 
     componentDidMount() {
         this.props.getUserInfo();
